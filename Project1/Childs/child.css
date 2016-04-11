@@ -1,0 +1,26 @@
+body {
+    background-image:url("../images/background.jpg");
+	width:1500px
+}
+.iconDetails {
+float:left; 
+} 
+img {
+padding-right:40px;float:left; width:400px; height:400px;
+}
+.back-to-home{
+float:right;
+font-size : 30px;
+}
+h1{
+color:Blue;
+font-size : 50px;
+text-align: center;
+padding-bottom: 100px;
+
+}
+p,li{
+color:black;
+font-size : 25px;
+
+}

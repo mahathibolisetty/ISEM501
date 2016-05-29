@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<head>
+<link rel="stylesheet" type="text/css" href="child.css">
+</head>
+<script type="text/javascript">
+
+      function formValidation()
+      {
+      
+         if( document.myForm.Name.value == "" )
+         {
+            alert( "Please provide your name!" );
+            document.myForm.Name.focus() ;
+            return false;
+         }
+         var email = document.myForm.EMail.value;
+         if( email === "" )
+         {
+            alert( "Please provide your Email!" );
+            document.myForm.EMail.focus() ;
+            return false;
+         }else{
+				 
+			var atTheRatePosition = email.indexOf("@");
+			var dotPosition = email.lastIndexOf(".");
+			if (atTheRatePosition<1 || dotPosition<atTheRatePosition+2 || dotPosition+2>=email.length) {
+				alert("Please provide valid email ID");
+                document.myForm.EMail.focus() ;
+				return false;
+			}
+		 }
+		 
+		 if( document.myForm.Phone.value === "" ||
+         isNaN( document.myForm.Phone.value ) ||
+         document.myForm.Phone.value.length !== 10 )
+         {
+            alert( "Please provide 10 digit phone number. Do not include country code" );
+            document.myForm.Phone.focus() ;
+            return false;
+         }
+         
+         if( document.myForm.Zip.value == "" ||
+         isNaN( document.myForm.Zip.value ) ||
+         document.myForm.Zip.value.length != 5 )
+         {
+            alert( "Please provide a valid 5 digit zip code" );
+            document.myForm.Zip.focus() ;
+            return false;
+         }
+         
+         if( document.myForm.Country.value === "-1" )
+         {
+            alert( "Please provide your country!" );
+            return false;
+         }
+            alert( "You have successfully registered for news letter. Redirecting to the home page" );
+		 return( true );
+      }
+	  
+   
+</script>
+
+
+<body>
+<div class = "back-to-home">
+<a href="../index.html">Back to Home</a>
+</div>
+<h1>Welcome to Health and Nutrition Education Website</h1>
+
+<p>
+<b>Please enter your details to get the news updated</b></p>
+
+<div id="formElement">
+
+      <form action="../index.html" name="myForm" onsubmit="return(formValidation());">
+         <table cellspacing="5" cellpadding="5" border="1">
+            
+            <tr>
+               <td align="right" >Name</td>
+               <td><input type="text" name="Name" onblur="myFunction()"/></td>
+            </tr>
+            
+            <tr>
+               <td align="right">Email</td>
+               <td><input type="text" name="EMail" /></td>
+            </tr>
+            
+            <tr>
+               <td align="right">Zip Code</td>
+               <td><input type="text" name="Zip" /></td>
+            </tr>
+			<tr>
+               <td align="right">Phone Number</td>
+               <td><input type="number" name="Phone" /></td>
+            </tr>
+            
+            <tr>
+               <td align="right">Country</td>
+               <td>
+                  <select name="Country">
+                     <option value="-1" selected>[choose yours]</option>
+                     <option value="1">czechoslovakia</option>
+                     <option value="2">UK</option>
+ 					 <option value="3">USA</option>
+                     <option value="4">INDIA</option>
+                  </select>
+               </td>
+            </tr>
+            
+            <tr>
+               <td align="right"></td>
+               <td><input type="submit" value="Submit" /></td>
+            </tr>
+            
+         </table>
+      </form>
+
+</div>
+
+
+
+
+
+</body>
+</html>
